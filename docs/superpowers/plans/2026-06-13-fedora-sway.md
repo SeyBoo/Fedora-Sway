@@ -653,26 +653,29 @@ cd ~/Sway-Dots && git add -A && git commit -m "feat(sway): main config + modular
 - Create: `~/Sway-Dots/config/sway/scripts/Nightlight.sh`
 - Create: `~/Sway-Dots/config/swaylock/config`
 
-- [ ] **Step 1: Write `swaylock/config`** (swaylock-effects, themed)
+- [ ] **Step 1: Write `swaylock/config`** (plain swaylock — Fedora main repo, NOT swaylock-effects)
+
+> NOTE: We install plain `swaylock` (main repo). `swaylock-effects`-only options
+> (`screenshots`, `effect-blur`, `effect-vignette`, `fade-in`, `clock`) are NOT
+> supported — do not add them. Use only base swaylock options below.
 
 ```
-# swaylock-effects — replaces hyprlock
-clock
-timestr=%H:%M
-datestr=%a, %B %e
-screenshots
-effect-blur=7x5
-effect-vignette=0.5:0.5
-fade-in=0.2
+# swaylock (plain) — replaces hyprlock
+color=1e1e2e
 indicator
 indicator-radius=120
 indicator-thickness=12
 ring-color=1e1e2e
+ring-ver-color=89b4fa
+ring-wrong-color=f38ba8
 key-hl-color=89b4fa
 line-color=00000000
 inside-color=11111b88
+inside-ver-color=11111b88
+inside-wrong-color=f38ba8
 separator-color=00000000
 text-color=cdd6f4
+text-ver-color=cdd6f4
 ```
 
 - [ ] **Step 2: Write `scripts/LockScreen.sh`**
@@ -749,7 +752,7 @@ cd ~/Sway-Dots && git add -A && git commit -m "feat(sway): swaylock config + Loc
 | Dropterminal.sh | rewrite using sway scratchpad: `swaymsg` scratchpad show/move + a marked terminal |
 | ChangeLayout.sh | rewrite: cycle `swaymsg layout` split/tabbed/stacking (replaces master/dwindle) |
 | ChangeBlur.sh, Animations.sh, GameMode.sh, OverviewToggle.sh, RainbowBorders* | **drop or stub** (no sway equivalent for blur/anim/overview); GameMode reduced to "disable idle + notify" |
-| Polkit.sh, Polkit-NixOS.sh | copy (hyprpolkitagent is WM-agnostic; keep Polkit.sh, drop NixOS variant) |
+| Polkit.sh, Polkit-NixOS.sh | rewrite Polkit.sh to launch `lxqt-policykit-agent` (we install `lxqt-policykit` from main repo instead of hyprpolkitagent): `pgrep -x lxqt-policykit- >/dev/null || /usr/bin/lxqt-policykit-agent &`. Drop the NixOS variant |
 | PortalHyprland.sh | **replace** with `PortalWlr.sh` (starts xdg-desktop-portal-wlr) |
 | Hypridle.sh, Hyprsunset.sh | **replace** by Task 10 (swayidle in Startup, Nightlight.sh) — drop these |
 | LockScreen.sh | already written in Task 10 — skip |
