@@ -6,7 +6,7 @@ sway=(
     sway
     swaybg
     swayidle
-    swaylock-effects
+    swaylock
     wlsunset
     swww
 )

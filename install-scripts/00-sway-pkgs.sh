@@ -20,7 +20,7 @@ sway_package=(
   grim
   gvfs
   gvfs-mtp
-  hyprpolkitagent
+  lxqt-policykit
   ImageMagick
   inxi
   jq
@@ -40,7 +40,7 @@ sway_package=(
   qt5ct
   qt6ct
   qt6-qtsvg
-  rofi-wayland
+  rofi
   slurp
   swappy
   unzip
