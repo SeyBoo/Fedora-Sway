@@ -19,9 +19,9 @@ cannot be run headless.
 
 ## Not yet done (needs a Fedora VM)
 
-> **`sway -C` config validation** — sway is not installed on the build host.
-> Run `sway -C ~/.config/sway/config` after the dotfiles are copied, or
-> `sudo dnf install sway && sway -C Sway-Dots/config/sway/config` to validate.
+> **`sway -C` config validation — PASSED** (Sway 1.11, 2026-06-14). The full
+> config + all includes parse with exit 0. Re-run after edits with
+> `sway -C -c <path-to>/config/sway/config`.
 
 ## VM smoke-test checklist (Task 15)
 
